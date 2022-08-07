@@ -31,6 +31,7 @@ let AdBannerEnabled = true;
 let NewCollectionEnabled = true;
 let featuredProductEnabled = true;
 let saleBannerEnabled = true;
+let vendorEnabled = true;
 let dealOfTheDayEnabled = true;
 let topSellingEnabled = true;
 let tradingProductsEnabled = true;
@@ -54,7 +55,7 @@ let Download = ()=>{
     })
 
     const jsonData = {
-		        "dashboard":{"sorting":visibleItems,"appBar":{"title":"Dashboard","appBarIcon":null,"appBarLayout":null},"sliderView":{"enable":AdBannerEnabled},"category":{"enable":CategoryEnabled},"saleBanner":{"enable":saleBannerEnabled},"newProduct":{"enable":NewCollectionEnabled,"title":"New Collections","viewAll":"See All"},"feature":{"enable":featuredProductEnabled,"title":"Featured Product","viewAll":"See All"},"saleProduct":{"enable":tradingProductsEnabled,"title":"Trading Product","viewAll":"See All"},"dealOfTheDay":{"enable":dealOfTheDayEnabled,"title":"Deal Of the day","viewAll":"See All"},"bestSaleProduct":{"enable":topSellingEnabled,"title":"Top Selling","viewAll":"See All"},"offerProduct":{"enable":availableOfferEnabled,"title":"Available Offers","viewAll":"See All"},"suggestionProduct":{"enable":recommendation4uEnabled,"title":"Recommendation For You","viewAll":"See All"},"vendor":{"enable":true,"title":"Vendors","viewAll":"See All"},"youMayLikeProduct":{"enable":youMightLikeEnabled,"title":"You Might Like","viewAll":"See All"}},"appsetup":{"appName":"Mighty Store","primaryColor":primaryColor,"secondaryColor":txtSecondaryColor,"backgroundColor":bgColor,"textPrimaryColor":txtPrimaryColor,"textSecondaryColor":"#757575","consumerKey":"ck_3b7eb3b2a4e8e1c60ccd271ec02275253d613bbb","consumerSecret":"cs_942d7ea436ffa320e0aabaadeddaff40387563ef","appUrl":"https://mydigitalstore.net.in/wp-json/"}
+		        "dashboard":{"sorting":visibleItems,"appBar":{"title":"Dashboard","appBarIcon":null,"appBarLayout":null},"sliderView":{"enable":AdBannerEnabled},"category":{"enable":CategoryEnabled},"saleBanner":{"enable":saleBannerEnabled},"newProduct":{"enable":NewCollectionEnabled,"title":"New Collections","viewAll":"See All"},"feature":{"enable":featuredProductEnabled,"title":"Featured Product","viewAll":"See All"},"saleProduct":{"enable":tradingProductsEnabled,"title":"Trading Product","viewAll":"See All"},"dealOfTheDay":{"enable":dealOfTheDayEnabled,"title":"Deal Of the day","viewAll":"See All"},"bestSaleProduct":{"enable":topSellingEnabled,"title":"Top Selling","viewAll":"See All"},"offerProduct":{"enable":availableOfferEnabled,"title":"Available Offers","viewAll":"See All"},"suggestionProduct":{"enable":recommendation4uEnabled,"title":"Recommendation For You","viewAll":"See All"},"vendor":{"enable":vendorEnabled,"title":"Vendors","viewAll":"See All"},"youMayLikeProduct":{"enable":youMightLikeEnabled,"title":"You Might Like","viewAll":"See All"}},"appsetup":{"appName":"Mighty Store","primaryColor":primaryColor,"secondaryColor":txtSecondaryColor,"backgroundColor":bgColor,"textPrimaryColor":txtPrimaryColor,"textSecondaryColor":txtSecondaryColor,"consumerKey":"ck_3b7eb3b2a4e8e1c60ccd271ec02275253d613bbb","consumerSecret":"cs_942d7ea436ffa320e0aabaadeddaff40387563ef","appUrl":"https://mydigitalstore.net.in/wp-json/"}
 		};
     onDownload(JSON.stringify(jsonData), "builder.json", "text/plain")
 }
@@ -129,6 +130,18 @@ let hideSaleBannerElement = ()=>{
 hideSaleBannerElement();
 }
 
+let hideVendor = (e)=>{
+  vendorEnabled = !vendorEnabled;
+let hideVendorElement = ()=>{
+  if(vendorEnabled){
+    document.getElementById("vendors").style.display = "block";
+  }else{
+    document.getElementById("vendors").style.display = "none";
+  }
+}
+hideVendorElement();
+}
+
 let hideDealOfTheDay = (e)=>{
   dealOfTheDayEnabled = !dealOfTheDayEnabled;
 let hideDealOfTheDayElement = ()=>{
@@ -139,6 +152,66 @@ let hideDealOfTheDayElement = ()=>{
   }
 }
 hideDealOfTheDayElement();
+}
+
+let hideTopSelling = (e)=>{
+  topSellingEnabled = !topSellingEnabled;
+let topSellingElement = ()=>{
+  if(topSellingEnabled){
+    document.getElementById("topSelling").style.display = "block";
+  }else{
+    document.getElementById("topSelling").style.display = "none";
+  }
+}
+topSellingElement();
+}
+
+let hideTradingProduct = (e)=>{
+  tradingProductsEnabled = !tradingProductsEnabled;
+let tradingProductElement = ()=>{
+  if(tradingProductsEnabled){
+    document.getElementById("tradingProducts").style.display = "block";
+  }else{
+    document.getElementById("tradingProducts").style.display = "none";
+  }
+}
+tradingProductElement();
+}
+
+let hideAvailableOffer = (e)=>{
+  availableOfferEnabled = !availableOfferEnabled;
+let tradingProductElement = ()=>{
+  if(availableOfferEnabled){
+    document.getElementById("availableOffer").style.display = "block";
+  }else{
+    document.getElementById("availableOffer").style.display = "none";
+  }
+}
+tradingProductElement();
+}
+
+let hideRecommendation4u = (e)=>{
+  recommendation4uEnabled = !recommendation4uEnabled;
+let recommendation4uElement = ()=>{
+  if(recommendation4uEnabled){
+    document.getElementById("recommendation4u").style.display = "block";
+  }else{
+    document.getElementById("recommendation4u").style.display = "none";
+  }
+}
+recommendation4uElement();
+}
+
+let hideYouMightLike = (e)=>{
+  youMightLikeEnabled = !youMightLikeEnabled;
+let youMightLikeElement = ()=>{
+  if(youMightLikeEnabled){
+    document.getElementById("youMightLike").style.display = "block";
+  }else{
+    document.getElementById("youMightLike").style.display = "none";
+  }
+}
+youMightLikeElement();
 }
 
 // dragging sections
@@ -155,15 +228,3 @@ new Sortable(dropItems, {
 
 
 //check div
-
-let checkDiv = ()=>{
-  let visibleItems = [];
-  let nodes = document.getElementById('phone-page').children;
-    Array.from(nodes).forEach((e)=>{
-      if(e.style.display === "flex" || e.style.display === "block"){
-        visibleItems.push(e.dataset.item);
-      };
-    })
-    console.log(visibleItems);
-  
-}

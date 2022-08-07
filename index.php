@@ -63,7 +63,7 @@
 </div>
                         <div class="toggleBtns form-check form-switch" draggable="true">
                             <label class="form-check-label"></i> Vendors</label>
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <input class="form-check-input" onChange="hideVendor()" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
 </div>
                         <div class="toggleBtns form-check form-switch" draggable="true">
                             <label class="form-check-label"></i> Deal of the day</label>
@@ -71,28 +71,28 @@
 </div>
                         <div class="toggleBtns form-check form-switch" draggable="true">
                             <label class="form-check-label"></i> Top Selling</label>
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <input class="form-check-input" onChange="hideTopSelling()" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
 </div>
                         <div class="toggleBtns form-check form-switch" draggable="true">
                             <label class="form-check-label"></i> Trading Product</label>
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <input class="form-check-input" onChange="hideTradingProduct()" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
 </div>
                         <div class="toggleBtns form-check form-switch" draggable="true">
                             <label class="form-check-label"></i> Available Offers</label>
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <input class="form-check-input" onChange="hideAvailableOffer()" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
 </div>
                         <div class="toggleBtns form-check form-switch" draggable="true">
                             <label class="form-check-label"></i> Recommendation For You</label>
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <input class="form-check-input" onChange="hideRecommendation4u()" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
 </div>
                         <div class="toggleBtns form-check form-switch" draggable="true">
                             <label class="form-check-label"></i> You Might Like</label>
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <input class="form-check-input" onChange="hideYouMightLike()" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
 </div></div>
                         <div class="d-flex mt-3">
                                         
                                         <a onClick="Download()" class="btn btn-success mx-2">Download</a>
-                                        <a onClick="checkDiv()" class="btn btn-success mx-2">Check</a>
+                                        
                                     </div>
                         </div>
                         <div class="preview mx-2 my-4">
@@ -103,23 +103,23 @@
                                     <div class="category-inner position-relative d-flex">
                                         <div class="iconbox">
                                             <div class="category-image"><img src="https://media.voguebusiness.com/photos/6216413a067349b21703e5e5/master/pass/-courtesy-of-gabriela-hearst-feb-22-story.jpg" alt="" width="59px"></div>
-                                            <p><span class="txtPrimary">Fashion</span></p>
+                                            <p><span class="txtPrimary">All</span></p>
                                         </div>
                                         <div class="iconbox">
                                             <div class="category-image"><img src="https://www.tomjames.com/pics/catalog/2021FA/pics/Ladies-Custom-Capsule-D2-63.jpg" alt="" width="59px"></div>
-                                            <p><span class="txtPrimary">Fashion</span></p>
+                                            <p><span class="txtPrimary">Bags</span></p>
                                         </div>
                                         <div class="iconbox">
                                             <div class="category-image"><img src="https://images.saymedia-content.com/.image/c_fit%2Ccs_srgb%2Cq_auto:eco%2Cw_620/MTc2NDU3NDg3NDI3MTgzODI5/clothing-tips-real-women.png" alt="" width="59px"></div>
-                                            <p><span class="txtPrimary">Fashion</span></p>
+                                            <p><span class="txtPrimary">Cothing</span></p>
                                         </div>
                                         <div class="iconbox">
                                             <div class="category-image"><img src="https://cf.ltkcdn.net/womens-fashion/images/std-xs/263385-340x340-ann-taylor.png" alt="" width="59px"></div>
-                                            <p><span class="txtPrimary">Fashion</span></p>
+                                            <p><span class="txtPrimary">Cosmetics</span></p>
                                         </div>
                                         <div class="iconbox">
                                             <div class="category-image"><img src="https://www.whitehouseblackmarket.com/Product_Images/570330038ext1.jpg?imgPolicy=productMed" alt="" width="59px"></div>
-                                            <p><span class="txtPrimary">Fashion</span></p>
+                                            <p><span class="txtPrimary">Dresses</span></p>
                                         </div>
                                         <div class="iconbox">
                                             <div class="category-image"><img src="https://media.voguebusiness.com/photos/6216413a067349b21703e5e5/master/pass/-courtesy-of-gabriela-hearst-feb-22-story.jpg" alt="" width="59px"></div>
@@ -205,6 +205,26 @@
                                             <div>Black Friday Sale 2021</div>
                                             <div>Sale starts from 1 Aug 2022</div>
                                         </div>
+                                    </div>
+                                    <div class="product-section" data-item="vendor" id="vendors" style="display: block;">
+                                            <div class="new-col p-3 d-flex justify-content-between">
+                                                <p><b><span class="txtPrimary">Vendors</span></b></p>
+                                                <p class="primaryColor">See All</p>
+                                            </div>
+                                            <div class="products d-flex flex-wrap justify-content-center">
+                                                <div class="mx-2">
+                                                    <img src="https://img.freepik.com/free-vector/toothpaste-tube-water-splash-promo-banner_107791-1942.jpg" alt="" srcset="" style="width:100%; border-radius: 10px;">
+                                                </div>                                      
+                                                <div class="mx-2 d-flex align-items-center p-2">
+                                                    <div class="imgicon"><img src="https://img.freepik.com/free-photo/happy-overjoyed-ethnic-lady-with-bushy-crisp-hair-gives-positive-answer-with-thumbs-up-likes-awesome-idea-closes-eyes-from-laugh-dressed-mockup-t-shirt-isolated-yellow-wall_273609-27923.jpg?w=2000" alt="" srcset="" style="width:58px; border-radius: 43px;"></div>
+                                                    <div class="infos" style="padding-left: 15px;">
+                                                        <p style="margin-bottom: 2px;font-weight: 700;">Store</p>
+                                                        <p style="font-size: 13px; margin-bottom:0px;">3205 Hart Ridge Road Siginow, Michigan, 48607</p>
+                                                    </div>
+                                                    
+                                                </div>                                      
+                                                                                 
+                                            </div>
                                     </div>
                                     <div class="product-section" data-item="deal_of_the_day" id="dealOfTheDay" style="display: block;">
                                             <div class="new-col p-3 d-flex justify-content-between">

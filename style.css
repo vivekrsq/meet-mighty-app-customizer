@@ -68,6 +68,10 @@
     border-radius: 29px;
     
 }
+.iconbox p {
+    text-align: center;
+    font-size: 15px;
+}
 .txtSecondary {
     font-size: 12px;
     margin-left: 6px;
